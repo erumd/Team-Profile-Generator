@@ -1,0 +1,32 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "a command line application that will generate an employee dashboard web page.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "init": "^0.1.2",
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erumd/Team-Profile-Generator.git"
+  },
+  "keywords": [
+    "CLI",
+    "Employee",
+    "NodeJS"
+  ],
+  "author": "Erum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erumd/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/erumd/Team-Profile-Generator#readme"
+}
