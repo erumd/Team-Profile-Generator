@@ -80,3 +80,16 @@ exports.role = role;
 exports.engineerQuestions = engineerQuestions;
 exports.managerQuestions = managerQuestions;
 exports.internQuestions = internQuestions;
+
+//Office hours HW helps
+const htmlCards = members.map(member => `
+  <div class= "col-4 mb-3">
+    <div class = "card" >
+      <div class= "card-title"> ${member.name}</div>
+      <div class= "card-body"> ${member.role}</div>
+    <div>
+  </div>
+
+`);
+
+
