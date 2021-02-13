@@ -21,10 +21,15 @@ This application is built using HTML, CSS, JavaScript, Bootstrap, NodeJS
 -video link explaining app
 
 ## Questions
-For questions checkout my GitHub account (https://github.com/erumd) or email me at erumdhukka531@gmail.com 
+
+For questions checkout my GitHub account (https://github.com/erumd) or email me at erumdhukka531@gmail.com
+
+https://erumd.github.io/Team-Profile-Generator/
+https://github.com/erumd/Team-Profile-Generator
 
 ## License
- MIT License
+
+MIT License
 
     Copyright (C), 2021, Erum Dhukka
     Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,4 +46,4 @@ For questions checkout my GitHub account (https://github.com/erumd) or email me 
     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE. 
+    SOFTWARE.
