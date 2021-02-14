@@ -1,13 +1,15 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-const Employee = require("./lib/employee");
-const Engineer = require("./lib/engineer");
-const Intern = require("./lib/intern");
-const Manager = require("./lib/manager");
+const Employee = require("./lib/Employee");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager");
 const questions = require("./questions");
-console.log(questions);
-// const managerQuestions = require ("./questions")
+// console.log(questions);
+// const role = require ("./questions/role")
+// import role from "./questions";
+// console.log(role);
 
 // const engineerCards = engineer.map(
 //   (engineer) => `
@@ -21,16 +23,18 @@ console.log(questions);
 // `
 // );
 
-// const managerCards = manager.map(
-//   (manager) => `
-// <div class= 'card'>
-//     <div class = 'card-header'> ${manager.role} </div>
-//     <div class = 'card-title'> ${manager.name} </div>
-//     <div class = 'card-text'> ${manager.id} </div>
-//     <div class = 'card-text'> ${manager.officeNumber} </div>
-// </div>
-// `
-// );
+const createManagerCard = (manager) => {
+  return manager.map(
+    (manager) => `
+      <div class= 'card'>
+          <div class = 'card-header'> ${manager.role} </div>
+          <div class = 'card-title'> ${manager.name} </div>
+          <div class = 'card-text'> ${manager.id} </div>
+          <div class = 'card-text'> ${manager.officeNumber} </div>
+      </div>
+      `
+  );
+};
 
 // const internCards = inter.map(
 //   (intern) => `
@@ -81,7 +85,7 @@ console.log(questions);
 //             <div class="card-header">Manger</div>
 //             <div class="card-body">
 //               <h5 class="card-title">Name</h5>
-//               ${managerCards.join("")}
+//   ${managerCards.join("")}
 
 //               <p class="card-text" id= "id"> ID </p>
 //               <p class="card-text" id= "email"> Office Number </p>
@@ -108,9 +112,43 @@ console.log(questions);
 
 // `;
 
-inquirer.prompt(questions[2]).then((data) => {
-  console.log(data);
-});
+// fs.writeFileSync("index.html", html);
+const createManager = () => {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "What is manager's name?",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is manager's ID?",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is manager's email?",
+      },
+      {
+        type: "input",
+        name: "officeNumber",
+        message: "What is manager's office number?",
+      },
+    ])
+    .then((data) => {
+      console.log(data);
+      const manager = new Manager(
+        data.name,
+        data.id,
+        data.email,
+        data.officeNumber
+      );
+      //   createManagerCard(data);
+      console.log(manager);
+    });
+};
+createManager();
 
-fs.writeFileSync("index.html", html);
-module.exports = index.js;
+// module.exports = index.js;

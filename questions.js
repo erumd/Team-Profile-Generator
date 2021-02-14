@@ -1,4 +1,7 @@
+// export const role = [
+
 const role = [
+
   {
     type: "list",
     name: "choice",
@@ -76,10 +79,10 @@ const internQuestions = [
   },
 ];
 
-exports.role = role;
-exports.engineerQuestions = engineerQuestions;
-exports.managerQuestions = managerQuestions;
-exports.internQuestions = internQuestions;
+// module.exports = role;
+// module.exports = engineerQuestions;
+// module.exports = managerQuestions;
+// module.exports = internQuestions;
 
 //Office hours HW helps
 // const htmlCards = members.map(member => `
