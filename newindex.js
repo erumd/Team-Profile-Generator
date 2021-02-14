@@ -5,7 +5,17 @@ const generateHTML = require("./index.html");
 
 
 const questions = [];
+inquirer
     .prompt([
+        // const role = [
+
+            {
+              type: "list",
+              name: "choice",
+              message: "Select a role to add:",
+              choices: ["Engineer", "Intern", "Manager"],
+            },
+          
     
 
     ])
@@ -25,4 +35,4 @@ const questions = [];
 //     inquirer
 //       .prompt([
 
-// }
+// 
