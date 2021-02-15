@@ -157,7 +157,7 @@ function buildTeamProfile() {
 
 function generateHTML() {
   console.log(teamProfile);
-  fs.writeFileSync(outputPath, generate(teamProfile));
+  fs.writeFileSync(goingOut, generate(teamProfile));
   console.log("file created!");
 }
 
