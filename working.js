@@ -151,7 +151,6 @@ function buildTeamProfile() {
   //   if (!fs.existsSync(output)) {
   //     fs.mkdirSync(output);
   //   }
-
   createTeam();
 }
 
