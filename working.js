@@ -14,7 +14,6 @@ const generate = require("./generateHTML");
 
 const team = [];
 
-// Questions for manager
 function managerQuestions() {
   inquirer
     .prompt([
