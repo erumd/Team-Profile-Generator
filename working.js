@@ -15,31 +15,31 @@ const generate = require("./generateHTML");
 const team = [];
 
 // Questions for manager
-function showManagerQuestions() {
+function managerQuestions() {
   inquirer
     .prompt([
       {
         type: "input",
         name: "name",
-        message: "Pleas enter Manager's name.",
+        message: "Manager's name:",
       },
 
       {
         type: "input",
         name: "id",
-        message: "Pleas enter Manager's ID.",
+        message: "Manager's ID:",
       },
 
       {
         type: "input",
         name: "email",
-        message: "Pleas enter Managers email.",
+        message: "Managers email:",
       },
 
       {
         type: "input",
         name: "officeNumber",
-        message: "Pleas enter Manager's officeNumber.",
+        message: "Manager's Office Number:",
       },
     ])
     .then((data) => {
@@ -55,31 +55,31 @@ function showManagerQuestions() {
 }
 
 // Questions for Engineer
-function showEngineerQuestions() {
+function engineerQuestions() {
   inquirer
     .prompt([
       {
         type: "input",
         name: "name",
-        message: "Pleas enter Engineer's name.",
+        message: "Engineer's name:",
       },
 
       {
         type: "input",
         name: "id",
-        message: "Pleas enter Engineer's ID.",
+        message: "Engineer's ID:",
       },
 
       {
         type: "input",
         name: "email",
-        message: "Pleas enter Engineer's email.",
+        message: "Engineer's email:",
       },
 
       {
         type: "input",
         name: "GitHub",
-        message: "Pleas enter Engineer's Github .",
+        message: "Engineer's Github:",
       },
     ])
     .then((data) => {
@@ -90,31 +90,31 @@ function showEngineerQuestions() {
     });
 }
 // Questions for Intern
-function showInternQuestions() {
+function internQuestions() {
   inquirer
     .prompt([
       {
         type: "input",
         name: "name",
-        message: "Pleas enter Intern's name.",
+        message: "Intern's name.",
       },
 
       {
         type: "input",
         name: "id",
-        message: "Pleas enter Intern's ID.",
+        message: "Intern's ID.",
       },
 
       {
         type: "input",
         name: "email",
-        message: "Pleas enter Intern's email.",
+        message: "Intern's email.",
       },
 
       {
         type: "input",
         name: "school",
-        message: "Pleas enter Intern's school.",
+        message: "Intern's school.",
       },
     ])
     .then((data) => {
@@ -132,18 +132,18 @@ function createTeam() {
     .prompt([
       {
         type: "list",
-        message: "Choose the employee's job Role",
+        message: "Choose Role",
         choices: ["Manager", "Engineer", "Intern", "Finished"],
         name: "jobRole",
       },
     ])
     .then((answers) => {
       if (answers.jobRole === "Manager") {
-        showManagerQuestions();
+        managerQuestions();
       } else if (answers.jobRole === "Engineer") {
-        showEngineerQuestions();
+        engineerQuestions();
       } else if (answers.jobRole === "Intern") {
-        showInternQuestions();
+        internQuestions();
       } else return generateHTML(team);
     });
 }
