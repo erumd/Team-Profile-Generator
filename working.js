@@ -1,6 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+const generate = require("./generateHTML");
+
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -9,9 +11,7 @@ const path = require("path");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.profile"); //need "team.profile" to generate and call later
 
-const generate = require("./generateHTML");
-
-const team = [];
+const teamProfile = [];
 
 function managerQuestions() {
   inquirer
@@ -47,7 +47,7 @@ function managerQuestions() {
         data.id,
         data.officeNumber
       );
-      team.push(moreInfo);
+      teamProfile.push(moreInfo);
       createTeam();
     });
 }
@@ -82,7 +82,7 @@ function engineerQuestions() {
     .then((data) => {
       console.log(data);
       let moreInfo = new Engineer(data.name, data.id, data.email, data.GitHub);
-      team.push(moreInfo);
+      teamProfile.push(moreInfo);
       createTeam();
     });
 }
@@ -117,7 +117,7 @@ function internQuestions() {
     .then((data) => {
       console.log(data);
       let moreInfo = new Intern(data.name, data.id, data.email, data.school);
-      team.push(moreInfo);
+      teamProfile.push(moreInfo);
       createTeam();
     });
 }
@@ -140,7 +140,7 @@ function createTeam() {
         engineerQuestions();
       } else if (answers.jobRole === "Intern") {
         internQuestions();
-      } else return generateHTML(team);
+      } else return generateHTML(teamProfile);
     });
 }
 
@@ -155,8 +155,8 @@ function buildTeamProfile() {
 }
 
 function generateHTML() {
-  console.log(team);
-  fs.writeFileSync(outputPath, generate(team));
+  console.log(teamProfile);
+  fs.writeFileSync(outputPath, generate(teamProfile));
   console.log("file created!");
 }
 
