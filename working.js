@@ -54,6 +54,7 @@ function managerQuestions() {
     });
 }
 
+
 function engineerQuestions() {
   inquirer
     .prompt([
@@ -88,6 +89,7 @@ function engineerQuestions() {
       createTeam();
     });
 }
+
 
 function internQuestions() {
   inquirer
@@ -124,6 +126,7 @@ function internQuestions() {
     });
 }
 
+
 function createTeam() {
   inquirer
     .prompt([
@@ -146,9 +149,9 @@ function createTeam() {
     });
 }
 
-//function to write file
+//tghis writes the file
 function buildTeamProfile() {
-  // statement checks if there is an exisiting filles prior to writing a the file
+  // checks if have an existing file before writing it. NOT sure 
   //   if (!fs.existsSync(output)) {
   //     fs.mkdirSync(output);
   //   }
