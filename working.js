@@ -9,9 +9,8 @@ const Intern = require("./lib/Intern");
 //need path to use to .resolve .join
 const path = require("path");
 
-// from class
-const output = path.resolve(__dirname, "output");
-const goingOut = path.join(output, "team.profile"); //need "team.profile" to generate and call later
+const folderPath = path.resolve(__dirname, "Develop"); // this path will creat file in the directory Develop Folder
+const createFile = path.join(folderPath, "index.html"); // this will create file "index.html" in the Develop folder.
 
 //array output
 const teamProfile = [];
@@ -55,7 +54,6 @@ function managerQuestions() {
     });
 }
 
-
 function engineerQuestions() {
   inquirer
     .prompt([
@@ -90,7 +88,6 @@ function engineerQuestions() {
       createTeam();
     });
 }
-
 
 function internQuestions() {
   inquirer
@@ -127,7 +124,6 @@ function internQuestions() {
     });
 }
 
-
 function createTeam() {
   inquirer
     .prompt([
@@ -150,18 +146,18 @@ function createTeam() {
     });
 }
 
-//tghis writes the file
+//this writes the file
 function buildTeamProfile() {
-  // checks if have an existing file before writing it. NOT sure 
-  //   if (!fs.existsSync(output)) {
-  //     fs.mkdirSync(output);
+  // checks if have an existing file before writing it. NOT sure
+  //   if (!fs.existsSync(folderPath)) {
+  //     fs.mkdirSync(folderPath);
   //   }
   createTeam();
 }
 
 function generateHTML() {
   console.log(teamProfile);
-  fs.writeFileSync(goingOut, generate(teamProfile));
+  fs.writeFileSync(createFile, generate(teamProfile));
   console.log("file created!");
 }
 
