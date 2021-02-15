@@ -9,7 +9,7 @@ const Intern = require("./lib/Intern");
 //need path to use to .resolve .join
 const path = require("path");
 
-//Acttivity example from class
+// from class
 const output = path.resolve(__dirname, "output");
 const goingOut = path.join(output, "team.profile"); //need "team.profile" to generate and call later
 
