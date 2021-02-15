@@ -53,7 +53,7 @@ function managerQuestions() {
     });
 }
 
-// Questions for Engineer
+
 function engineerQuestions() {
   inquirer
     .prompt([
