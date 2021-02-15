@@ -87,7 +87,7 @@ function engineerQuestions() {
       createTeam();
     });
 }
-// Questions for Intern
+
 function internQuestions() {
   inquirer
     .prompt([
