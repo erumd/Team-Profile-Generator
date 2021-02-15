@@ -33,9 +33,10 @@ const HTMLTemplate = (data) => `
           <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
             <div class="card-header">Manager</div>
             <div class="card-body">
-              <h5 class="card-title">${data.name}</h5>
-              <p class="card-text" id= "id"> ${data.id} </p>
-              <p class="card-text" id= "email"> ${data.officeNumber} </p>
+              <h5 class="card-title">${data.managerName}</h5>
+              <p class="card-text" id= "id"> ${data.ManagerId} </p>
+              <p class="card-text" id= "email"> ${data.managerEmail} </p>
+              <p class="card-text" id= "officeNumber"> ${data.managerOfficeNumber} </p>
             </div>
           </div>
 

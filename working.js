@@ -8,9 +8,9 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 //need path to use to .resolve .join
 const path = require("path");
-
-const folderPath = path.resolve(__dirname, "Develop"); // this path will creat file in the directory Develop Folder
-const createFile = path.join(folderPath, "index.html"); // this will create file "index.html" in the Develop folder.
+//BOTTOM CODE: if you want file to go into folder but I do not.
+//const folderPath = path.resolve(__dirname, "Develop");  this path will creat file in the directory Develop Folder
+const createFile = path.join("generateIndex.html"); // this will create file "generateIndex.html" in the Develop folder.
 
 //array output
 const teamProfile = [];
@@ -20,34 +20,34 @@ function managerQuestions() {
     .prompt([
       {
         type: "input",
-        name: "name",
+        name: "managerName",
         message: "Manager's name:",
       },
 
       {
         type: "input",
-        name: "id",
+        name: "managerId",
         message: "Manager's ID:",
       },
 
       {
         type: "input",
-        name: "email",
+        name: "managerEmail",
         message: "Managers email:",
       },
 
       {
         type: "input",
-        name: "officeNumber",
+        name: "ManagerOfficeNumber",
         message: "Manager's Office Number:",
       },
     ])
     .then((data) => {
       let moreInfo = new Manager(
-        data.name,
-        data.email,
-        data.id,
-        data.officeNumber
+        data.managerName,
+        data.managerEmail,
+        data.managerId,
+        data.managerOfficeNumber
       );
       teamProfile.push(moreInfo);
       createTeam();
@@ -161,7 +161,7 @@ function generateHTML() {
   console.log("file created!");
 }
 
-// fs.writeFile("index.html", generateHTML(), (err) =>
+// fs.writeFile("generateIndex.html", generateHTML(), (err) =>
 //   err ? console.error(err) : console.log("file created!")
 // );
 buildTeamProfile();
