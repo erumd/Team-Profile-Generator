@@ -130,7 +130,8 @@ function createTeam() {
         type: "list",
         message: "Choose Role",
         choices: ["Manager", "Engineer", "Intern", "Finished"],
-        name: "Role",
+        //need the jobRole to apply later to ger data
+        name: "jobRole",
       },
     ])
     .then((answers) => {
