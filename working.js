@@ -123,7 +123,6 @@ function internQuestions() {
     });
 }
 
-
 function createTeam() {
   inquirer
     .prompt([
@@ -131,7 +130,7 @@ function createTeam() {
         type: "list",
         message: "Choose Role",
         choices: ["Manager", "Engineer", "Intern", "Finished"],
-        name: "jobRole",
+        name: "Role",
       },
     ])
     .then((answers) => {
