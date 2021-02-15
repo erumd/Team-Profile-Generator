@@ -13,6 +13,7 @@ const path = require("path");
 const output = path.resolve(__dirname, "output");
 const goingOut = path.join(output, "team.profile"); //need "team.profile" to generate and call later
 
+//array output
 const teamProfile = [];
 
 function managerQuestions() {
