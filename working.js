@@ -53,7 +53,6 @@ function managerQuestions() {
     });
 }
 
-
 function engineerQuestions() {
   inquirer
     .prompt([
