@@ -124,7 +124,6 @@ function internQuestions() {
 }
 
 
-
 function createTeam() {
   inquirer
     .prompt([
