@@ -1,7 +1,4 @@
-function renderLicenseBadge(license) {}
 
-function generateHTML(data) {
-  return `
     <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +53,4 @@ function generateHTML(data) {
     
 </body>
 </html>
-    `;
-}
-
-module.exports = generateHTML;
+    

@@ -6,11 +6,11 @@ const path = require("path");
 const fs = require("fs");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+const outputPath = path.join(OUTPUT_DIR, "team.profile");
 
-const render = require("./generateHTML");
+const generate = require("./generateHTML");
 
-const Employee = require("./lib/Employee");
+// const Employee = require("./lib/Employee");
 
 const team = [];
 
@@ -149,18 +149,22 @@ function createTeam() {
 }
 
 //function to write file
-function buildTeam() {
+function buildTeamProfile() {
   // statement checks if there is an exisiting filles prior to writing a the file
-  if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR);
-  }
+  //   if (!fs.existsSync(OUTPUT_DIR)) {
+  //     fs.mkdirSync(OUTPUT_DIR);
+  //   }
 
   createTeam();
 }
 
 function generateHTML() {
   console.log(team);
-  fs.writeFileSync(outputPath, render(team), "UTF-8");
+  fs.writeFileSync(outputPath, generate(team));
+  console.log("file created!");
 }
 
-buildTeam();
+// fs.writeFile("index.html", generateHTML(), (err) =>
+//   err ? console.error(err) : console.log("file created!")
+// );
+buildTeamProfile();
