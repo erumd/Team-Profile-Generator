@@ -23,18 +23,18 @@ const questions = require("./questions");
 // `
 // );
 
-const createManagerCard = (manager) => {
-  return manager.map(
-    (manager) => `
-      <div class= 'card'>
-          <div class = 'card-header'> ${manager.role} </div>
-          <div class = 'card-title'> ${manager.name} </div>
-          <div class = 'card-text'> ${manager.id} </div>
-          <div class = 'card-text'> ${manager.officeNumber} </div>
-      </div>
-      `
-  );
-};
+// const createManagerCard = (manager) => {
+//   return manager.map(
+//     (manager) => `
+//       <div class= 'card'>
+//           <div class = 'card-header'> ${manager.role} </div>
+//           <div class = 'card-title'> ${manager.name} </div>
+//           <div class = 'card-text'> ${manager.id} </div>
+//           <div class = 'card-text'> ${manager.officeNumber} </div>
+//       </div>
+//       `
+//   );
+// };
 
 // const internCards = inter.map(
 //   (intern) => `
@@ -113,45 +113,109 @@ const createManagerCard = (manager) => {
 // `;
 
 // fs.writeFileSync("index.html", html);
-const createManager = () => {
+async function createManager() {
+  const managerData = await inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "What is manager's name?",
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "What is manager's ID?",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is manager's email?",
+    },
+    {
+      type: "input",
+      name: "officeNumber",
+      message: "What is manager's office number?",
+    },
+  ]);
+
+  // // .then((data) => {
+  //   console.log(data);
+  //   const manager = new Manager(
+  //     data.name,
+  //     data.id,
+  //     data.email,
+  //     data.officeNumber
+  //   );
+  //   //   createManagerCard(data);
+  //   console.log(manager);
+  // });
+  createManager();
+  
+}
+
+async function createRole() {
+  await inquirer
+    .prompt([
+      // const role = [
+      {
+        type: "list",
+        name: "choice",
+        message: "Select a role to add:",
+        choices: ["Engineer", "Intern", "Manager"],
+      },
+    ])
+    .then((data) => {
+      if (data === "Engineer") {
+        engineerQuestions();
+      } else if (data === "Intern") {
+        internQuestions();
+      } else if (data === "Manager") {
+        managerQuestions();
+      }
+    });
+}
+//need to call after the function
+createRole();
+
+// module.exports = index.js;
+
+async function engineerQuestions() {
   inquirer
     .prompt([
       {
         type: "input",
         name: "name",
-        message: "What is manager's name?",
+        message: "Engineer's name:",
       },
+
       {
         type: "input",
         name: "id",
-        message: "What is manager's ID?",
+        message: "Engineer's ID:",
       },
+
       {
         type: "input",
         name: "email",
-        message: "What is manager's email?",
+        message: "Engineer's email:",
       },
+
       {
         type: "input",
-        name: "officeNumber",
-        message: "What is manager's office number?",
+        name: "GitHub",
+        message: "Engineer's Github:",
       },
     ])
     .then((data) => {
       console.log(data);
-      const manager = new Manager(
+      const engineer = new Engineer(
         data.name,
         data.id,
         data.email,
         data.officeNumber
       );
-      //   createManagerCard(data);
-      console.log(manager);
+      //   let moreInfo = new Engineer(data.name, data.id, data.email, data.GitHub);
+      //   team.push(moreInfo);
+      // createRole();
     });
-};
-createManager();
-
-// module.exports = index.js;
-
-
-
+}
+engineerQuestions();
