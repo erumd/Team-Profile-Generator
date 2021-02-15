@@ -6,7 +6,7 @@ const generate = require("./generateHTML");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-//need path
+//need path to use to .resolve .join
 const path = require("path");
 
 //Acttivity example from class
