@@ -10,7 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.profile");
 
 const generate = require("./generateHTML");
 
-// const Employee = require("./lib/Employee");
+
 
 const team = [];
 
