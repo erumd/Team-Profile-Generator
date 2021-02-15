@@ -10,7 +10,7 @@ const path = require("path");
 
 //Acttivity example from class
 const output = path.resolve(__dirname, "output");
-const outputPath = path.join(output, "team.profile"); //need "team.profile" to generate and call later
+const goingOut = path.join(output, "team.profile"); //need "team.profile" to generate and call later
 
 const teamProfile = [];
 
@@ -148,8 +148,8 @@ function createTeam() {
 //function to write file
 function buildTeamProfile() {
   // statement checks if there is an exisiting filles prior to writing a the file
-  //   if (!fs.existsSync(OUTPUT_DIR)) {
-  //     fs.mkdirSync(OUTPUT_DIR);
+  //   if (!fs.existsSync(output)) {
+  //     fs.mkdirSync(output);
   //   }
 
   createTeam();
