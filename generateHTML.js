@@ -1,9 +1,3 @@
-//create a function to return manager questions
-
-//create a function to return engineer questions
-
-//create a function to return intern questions
-
 function generateHTML(data) {
   return `
   <!DOCTYPE html>
@@ -25,40 +19,41 @@ function generateHTML(data) {
       <h2></h2>
       <div class= "container">
 
-          <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card text-black bg-info mb-3" style="max-width: 18rem;">
+              <div class="card-header">Manager</div>
+              <div class="card-body">
+              <h5 class="card-title" id="name">${data[0].name}</h5>
+              <p class="card-text" id= "id"> Email: <a href="mailto:erumdhukka531@gmail.com"> ${data[0].id} </a> </p>
+              <p class="card-text" id= "email"> ID:${data[0].email} </p>
+              <p class="card-text" id= "officeNumber"> Office Number: ${data[0].officeNumber} </p>
+              </div>
+            </div>
+
+            <div class="card text-black bg-warning mb-3" style="max-width: 18rem;">
               <div class="card-header">Engineer</div>
               <div class="card-body">
                 <h5 class="card-title" id="name"> ${data[1].name}</h5>
                 <p class="card-text" id= "id"> ID: ${data[1].id}  </p>
-                <p class="card-text" id= "email"> ${data[1].email}</p>
-                <p class="card-text" id="github"> https://github.com/${data[1].github} </p>
-
-  
+                <p class="card-text" id= "email"> Email: <a href="mailto:erumdhukka531@gmail.com"> ${data[1].email} </a> </p>
+                <p class="card-text" id="github"> GitHub Name: <a href= "https://github.com/erumd"> ${data[1].github} </a> </p>
               </div>
             </div>
   
-            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-              <div class="card-header">Manager</div>
-              <div class="card-body">
-              <h5 class="card-title" id="name">${data[0].name}</h5>
-              <p class="card-text" id= "id">  ${data[0].id} </p>
-              <p class="card-text" id= "email"> ID:${data[0].email} </p>
-              <p class="card-text" id= "officeNumber"> Office Number: ${data[0].officeNumber} </p>
-
-              </div>
-            </div>
-  
-            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card text-black g-secondary mb-3" style="max-width: 18rem;">
               <div class="card-header">Intern</div>
               <div class="card-body">
                 <h5 class="card-title">${data[2].name}</h5>
                 <p class="card-text" id= "id"> ID: ${data[2].id} </p>
-                <p class="card-text" id= "email">${data[2].email} </p>
-                <p class="card-text" id = "school"> ${data[2].school} </p>
+                <p class="card-text" id= "email"> Email: <a href="mailto:erumdhukka531@gmail.com"> ${data[2].email} </a> </p>
+                <p class="card-text" id = "school"> School: ${data[2].school} </p>
               </div>
             </div>
   
       </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       
   </body>
   </html>

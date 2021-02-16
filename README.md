@@ -11,9 +11,9 @@ This application is built using HTML, CSS, JavaScript, Bootstrap, NodeJS
 ## Table of Contents
 
 - [Installation](#installation)
-- [Usage](#usage)
 - [Review](#review)
 - [Questions](#questions)
+- [Contribution](#contribution)
 - [License](#license)
 
 ## Installation
@@ -30,9 +30,11 @@ When prompted, choose from employee role to add, and enter your response.
 
 Open generateIndex.html file to view your input .
 
-## Review
+## Video Walk through
 
--video link explaining app
+Use this link to watch a video on how to use this app to automatically generate a Team Profile webpage. [https://video.drift.com/v/ab5EWxvEzAl/].
+
+![Screenshot](./Develop/TeamProfile.jpg)
 
 ## Questions
 
@@ -44,7 +46,7 @@ https://github.com/erumd/Team-Profile-Generator
 
 ## Contribution
 
-I would like to thank my classmates and tutor for helping me create this application. Without their help this would not have been possible.
+I would like to thank my classmates and tutor for helping me create this application. Without their help this would not have been possible. There many ways to write the code for this application and they helped me understand and pick the code I was most comfortable and confident writing.
 
 ## License
 
