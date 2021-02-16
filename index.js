@@ -15,45 +15,6 @@ const createFile = path.join("generateIndex.html"); // this will create file "ge
 //array output
 const teamProfile = [];
 
-function managerQuestions() {
-  inquirer
-    .prompt([
-      {
-        type: "input",
-        name: "managerName",
-        message: "Manager's name:",
-      },
-
-      {
-        type: "input",
-        name: "managerId",
-        message: "Manager's ID:",
-      },
-
-      {
-        type: "input",
-        name: "managerEmail",
-        message: "Managers email:",
-      },
-
-      {
-        type: "input",
-        name: "ManagerOfficeNumber",
-        message: "Manager's Office Number:",
-      },
-    ])
-    .then((data) => {
-      let moreInfo = new Manager(
-        data.managerName,
-        data.managerEmail,
-        data.managerId,
-        data.managerOfficeNumber
-      );
-      teamProfile.push(moreInfo);
-      createTeam();
-    });
-}
-
 function engineerQuestions() {
   inquirer
     .prompt([
@@ -77,15 +38,59 @@ function engineerQuestions() {
 
       {
         type: "input",
-        name: "GitHub",
+        name: "github",
         message: "Engineer's Github:",
       },
     ])
     .then((data) => {
       console.log(data);
-      let moreInfo = new Engineer(data.name, data.id, data.email, data.GitHub);
+      let moreInfo = new Engineer(
+        data.name,
+        data.id,
+        data.email,
+        data.engineergithub
+      );
       teamProfile.push(moreInfo);
-      createTeam();
+      chooseRole();
+    });
+}
+
+function managerQuestions() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "Manager's name:",
+      },
+
+      {
+        type: "input",
+        name: "id",
+        message: "Manager's ID:",
+      },
+
+      {
+        type: "input",
+        name: "email",
+        message: "Managers email:",
+      },
+
+      {
+        type: "input",
+        name: "officeNumber",
+        message: "Manager's Office Number:",
+      },
+    ])
+    .then((data) => {
+      let moreInfo = new Manager(
+        data.name,
+        data.email,
+        data.id,
+        data.officeNumber
+      );
+      teamProfile.push(moreInfo);
+      chooseRole();
     });
 }
 
@@ -120,11 +125,11 @@ function internQuestions() {
       console.log(data);
       let moreInfo = new Intern(data.name, data.id, data.email, data.school);
       teamProfile.push(moreInfo);
-      createTeam();
+      chooseRole();
     });
 }
 
-function createTeam() {
+function chooseRole() {
   inquirer
     .prompt([
       {
@@ -152,7 +157,7 @@ function buildTeamProfile() {
   //   if (!fs.existsSync(folderPath)) {
   //     fs.mkdirSync(folderPath);
   //   }
-  createTeam();
+  chooseRole();
 }
 
 function generateHTML() {

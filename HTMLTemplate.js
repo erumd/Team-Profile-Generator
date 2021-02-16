@@ -22,10 +22,10 @@ const HTMLTemplate = (data) => `
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
             <div class="card-header">Engineer</div>
             <div class="card-body">
-              <h5 class="card-title" id="name"> ${data.name}</h5>
-              <p class="card-text" id= "id"> ${data.id} </p>
-              <p class="card-text" id= "email"> ${data.email}</p>
-              <p class="card-text"> ${data.GitHub} </p>
+              <h5 class="card-title" id="name"> ${data[1].name} </h5>
+              <p class="card-text" id= "id"> ${data[1].id} </p>
+              <p class="card-text" id= "email"><a href="${data[1].email}"></p>
+              <p class="card-text" id= "github> (https://github.com/${data[1].github}) </p>
 
             </div>
           </div>
@@ -33,20 +33,20 @@ const HTMLTemplate = (data) => `
           <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
             <div class="card-header">Manager</div>
             <div class="card-body">
-              <h5 class="card-title">${data.managerName}</h5>
-              <p class="card-text" id= "id"> ${data.ManagerId} </p>
-              <p class="card-text" id= "email"> ${data.managerEmail} </p>
-              <p class="card-text" id= "officeNumber"> ${data.managerOfficeNumber} </p>
+              <h5 class="card-title" id="name" >${data[0].name}</h5>
+              <p class="card-text" id= "id"> ${data[0].id} </p>
+              <p class="card-text" id= "email"><a href="${data[0].email}"> </p>
+              <p class="card-text" id= "officeNumber"> ${data[0].officeNumber}  </p>
             </div>
           </div>
 
           <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
             <div class="card-header">Intern</div>
             <div class="card-body">
-              <h5 class="card-title">${data.name}</h5>
-              <p class="card-text" id= "id"> ${data.id} </p>
-              <p class="card-text" id= "email"> ${data.email} </p>
-              <p class="card-text" id = "school"> ${data.school} </p>
+              <h5 class="card-title">${data[2].name}</h5>
+              <p class="card-text" id= "id"> ${data[2].id} </p>
+              <p class="card-text" id= "email"><a href="${data[2].email}"> </p>
+              <p class="card-text" id = "school"> ${data[2].school} </p>
             </div>
           </div>
 
