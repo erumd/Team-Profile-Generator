@@ -4,6 +4,8 @@
 
 ## Description
 
+This application takes in information about employees ranging from engineers, managers, and interns on a software engineering team. Its takes their information such as name, email, ID, office number, or GitHub then generates an HTML webpage that displays summaries for each person.
+
 This application is built using HTML, CSS, JavaScript, Bootstrap, NodeJS
 
 ## Table of Contents
@@ -37,7 +39,12 @@ Open generateIndex.html file to view your input .
 For questions checkout my GitHub account (https://github.com/erumd) or email me at erumdhukka531@gmail.com
 
 https://erumd.github.io/Team-Profile-Generator/
+
 https://github.com/erumd/Team-Profile-Generator
+
+## Contribution
+
+I would like to thank my classmates and tutor for helping me create this application. Without their help this would not have been possible.
 
 ## License
 

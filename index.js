@@ -1,3 +1,8 @@
+//got help from multiple classmates to create index.js. Different way to complete 
+//you can combine all question to ask to create separate files. I chose to combine
+//there are multiple ways to solve this code.
+
+
 const inquirer = require("inquirer");
 const fs = require("fs");
 
@@ -14,6 +19,28 @@ const createFile = path.join("generateIndex.html"); // this will create file "ge
 
 //array output
 const teamProfile = [];
+
+function chooseRole() {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        message: "Choose Role",
+        choices: ["Manager", "Engineer", "Intern", "Finished"],
+        //need the jobRole to apply later to ger data
+        name: "jobRole",
+      },
+    ])
+    .then((answers) => {
+      if (answers.jobRole === "Manager") {
+        managerQuestions();
+      } else if (answers.jobRole === "Engineer") {
+        engineerQuestions();
+      } else if (answers.jobRole === "Intern") {
+        internQuestions();
+      } else return generateHTML(teamProfile);
+    });
+}
 
 function engineerQuestions() {
   inquirer
@@ -48,7 +75,7 @@ function engineerQuestions() {
         data.name,
         data.id,
         data.email,
-        data.engineergithub
+        data.github
       );
       teamProfile.push(moreInfo);
       chooseRole();
@@ -129,27 +156,7 @@ function internQuestions() {
     });
 }
 
-function chooseRole() {
-  inquirer
-    .prompt([
-      {
-        type: "list",
-        message: "Choose Role",
-        choices: ["Manager", "Engineer", "Intern", "Finished"],
-        //need the jobRole to apply later to ger data
-        name: "jobRole",
-      },
-    ])
-    .then((answers) => {
-      if (answers.jobRole === "Manager") {
-        managerQuestions();
-      } else if (answers.jobRole === "Engineer") {
-        engineerQuestions();
-      } else if (answers.jobRole === "Intern") {
-        internQuestions();
-      } else return generateHTML(teamProfile);
-    });
-}
+
 
 //this writes the file
 function buildTeamProfile() {
