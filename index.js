@@ -39,7 +39,7 @@ function engineerQuestions() {
       {
         type: "input",
         name: "github",
-        message: "Engineer's Github:",
+        message: "Engineer's Github Username:",
       },
     ])
     .then((data) => {

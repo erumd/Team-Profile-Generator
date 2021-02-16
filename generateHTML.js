@@ -29,9 +29,9 @@ function generateHTML(data) {
               <div class="card-header">Engineer</div>
               <div class="card-body">
                 <h5 class="card-title" id="name"> ${data[1].name}</h5>
-                <p class="card-text" id= "id"> ${data[1].id}  </p>
+                <p class="card-text" id= "id"> ID: ${data[1].id}  </p>
                 <p class="card-text" id= "email"> ${data[1].email}</p>
-                <p class="card-text" id="github"><a href= "https://github.com/${data[1].github}"> </p>
+                <p class="card-text" id="github"> https://github.com/${data[1].github} </p>
 
   
               </div>
@@ -41,9 +41,9 @@ function generateHTML(data) {
               <div class="card-header">Manager</div>
               <div class="card-body">
               <h5 class="card-title" id="name">${data[0].name}</h5>
-              <p class="card-text" id= "id"> ${data[0].id} </p>
-              <p class="card-text" id= "email">${data[0].email} </p>
-              <p class="card-text" id= "officeNumber"> ${data[0].officeNumber} </p>
+              <p class="card-text" id= "id">  ${data[0].id} </p>
+              <p class="card-text" id= "email"> ID:${data[0].email} </p>
+              <p class="card-text" id= "officeNumber"> Office Number: ${data[0].officeNumber} </p>
 
               </div>
             </div>
@@ -52,7 +52,7 @@ function generateHTML(data) {
               <div class="card-header">Intern</div>
               <div class="card-body">
                 <h5 class="card-title">${data[2].name}</h5>
-                <p class="card-text" id= "id"> ${data[2].id} </p>
+                <p class="card-text" id= "id"> ID: ${data[2].id} </p>
                 <p class="card-text" id= "email">${data[2].email} </p>
                 <p class="card-text" id = "school"> ${data[2].school} </p>
               </div>

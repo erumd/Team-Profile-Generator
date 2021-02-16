@@ -24,8 +24,8 @@ const HTMLTemplate = (data) => `
             <div class="card-body">
               <h5 class="card-title" id="name"> ${data[1].name} </h5>
               <p class="card-text" id= "id"> ${data[1].id} </p>
-              <p class="card-text" id= "email"><a href="${data[1].email}"></p>
-              <p class="card-text" id= "github> (https://github.com/${data[1].github}) </p>
+              <p class="card-text" id= "email"><${data[1].email}></p>
+              <p class="card-text" id= "github> https://github.com/${data[1].github} </p>
 
             </div>
           </div>

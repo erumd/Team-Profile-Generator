@@ -14,7 +14,19 @@ This application is built using HTML, CSS, JavaScript, Bootstrap, NodeJS
 - [Questions](#questions)
 - [License](#license)
 
-## Usage
+## Installation
+
+https://github.com/erumd/Team-Profile-Generator
+
+Fork above repo link and open it on your computer.
+
+In terminal open up the command line in the correct file location.
+
+This application will be invoked by using the following command:bash & node index.js
+
+When prompted, choose from employee role to add, and enter your response.
+
+Open generateIndex.html file to view your input .
 
 ## Review
 
