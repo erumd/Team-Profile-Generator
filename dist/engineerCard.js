@@ -6,7 +6,7 @@ const engineerCard = (engineer) => {
         <h5 class="card-title" id="name"> ${engineer.getName()}</h5>
         <p class="card-text" id= "id"> ID: ${engineer.getId()}  </p>
         <p class="card-text" id= "email"> Email: <a href="mailto:erumdhukka531@gmail.com"> ${engineer.getEmail()} </a> </p>
-        <p class="card-text" id="github"> GitHub Name: <a href='https://github.com/'> ${engineer.getGithub()} </a> </p>
+        <p class="card-text" id="github"> GitHub Name: <a href="https://github.com/${engineer.getGithub()}"> ${engineer.getGithub()} </a>   </p>
     </div>
  </div>
 `;
