@@ -1,0 +1,64 @@
+const managerCard = require("./managerCard");
+const generateCombinedCard = (combinedCards) => {
+  const combinedCard = `<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Team Profile Generator </title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  </head>
+  <body>
+  
+      <nav class="navbar navbar-dark bg-danger">
+          <a class="navbar-brand" href="/">Team Profile Generator 
+          </a>
+        </nav>
+  
+      <h2></h2>
+      <div class= "container">
+
+            <div class="card text-black bg-info mb-3" style="max-width: 18rem;">
+              <div class="card-header">Manager</div>
+              <div class="card-body">
+              <h5 class="card-title" id="name">Tom</h5>
+              <p class="card-text" id= "id"> Email: <a href="mailto:erumdhukka531@gmail.com"> tom@yahoo.com </a> </p>
+              <p class="card-text" id= "email"> ID:123 </p>
+              <p class="card-text" id= "officeNumber"> Office Number: 1 </p>
+              </div>
+            </div>
+
+            <div class="card text-black bg-warning mb-3" style="max-width: 18rem;">
+              <div class="card-header">Engineer</div>
+              <div class="card-body">
+                <h5 class="card-title" id="name"> Jerry</h5>
+                <p class="card-text" id= "id"> ID: 1234  </p>
+                <p class="card-text" id= "email"> Email: <a href="mailto:erumdhukka531@gmail.com"> jerry@gmail.com </a> </p>
+                <p class="card-text" id="github"> GitHub Name: <a href= "https://github.com/erumd"> erumd </a> </p>
+              </div>
+            </div>
+  
+            <div class="card text-black g-secondary mb-3" style="max-width: 18rem;">
+              <div class="card-header">Intern</div>
+              <div class="card-body">
+                <h5 class="card-title">intern</h5>
+                <p class="card-text" id= "id"> ID: 123456 </p>
+                <p class="card-text" id= "email"> Email: <a href="mailto:erumdhukka531@gmail.com"> intern@gmail.com </a> </p>
+                <p class="card-text" id = "school"> School: Rice University </p>
+              </div>
+            </div>
+  
+      </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      
+  </body>
+  </html>`;
+
+  return combinedCard;
+};
+
+module.export = generateCombinedCard;
