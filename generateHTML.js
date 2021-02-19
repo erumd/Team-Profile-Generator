@@ -1,3 +1,30 @@
+const generateManagerCard = require("./dist/managerCard");
+const generateEngineerCard = require("./dist/engineerCard");
+const generateInternCard = require("./dist/internCard");
+
+const createTeam = (teamMembers) => {
+  const htmlCards = [];
+
+  const managerObjects = teamMembers.filter((employee) => employee.getRole() === "Manager");
+  htmlCards.push(managerObjects.map((manager) => generateManagerCard(manager)).join());
+
+  const engineerObjects = teamMembers.filter(
+    (employee) => employee.getRole() === "Engineer"
+  );
+  htmlCards.push(engineerObjects.map((engineer) => generateEngineerCard(engineer)).join()
+  );
+
+  const internObjects = teamMembers.filter(
+    (employee) => employee.getRole() === "Intern"
+  );
+  htmlCards.push(
+    internObjects.map((intern) => generateInternCard(intern)).join()
+  );
+
+  console.log(htmlCards);
+  return htmlCards;
+};
+
 function generateHTML(data) {
   return `
   <!DOCTYPE html>
@@ -18,37 +45,7 @@ function generateHTML(data) {
   
       <h2></h2>
       <div class= "container">
-
-            <div class="card text-black bg-info mb-3" style="max-width: 18rem;">
-              <div class="card-header">Manager</div>
-              <div class="card-body">
-              <h5 class="card-title" id="name">${data[0].name}</h5>
-              <p class="card-text" id= "id"> Email: <a href="mailto:erumdhukka531@gmail.com"> ${data[0].id} </a> </p>
-              <p class="card-text" id= "email"> ID:${data[0].email} </p>
-              <p class="card-text" id= "officeNumber"> Office Number: ${data[0].officeNumber} </p>
-              </div>
-            </div>
-
-            <div class="card text-black bg-warning mb-3" style="max-width: 18rem;">
-              <div class="card-header">Engineer</div>
-              <div class="card-body">
-                <h5 class="card-title" id="name"> ${data[1].name}</h5>
-                <p class="card-text" id= "id"> ID: ${data[1].id}  </p>
-                <p class="card-text" id= "email"> Email: <a href="mailto:erumdhukka531@gmail.com"> ${data[1].email} </a> </p>
-                <p class="card-text" id="github"> GitHub Name: <a href= "https://github.com/erumd"> ${data[1].github} </a> </p>
-              </div>
-            </div>
-  
-            <div class="card text-black g-secondary mb-3" style="max-width: 18rem;">
-              <div class="card-header">Intern</div>
-              <div class="card-body">
-                <h5 class="card-title">${data[2].name}</h5>
-                <p class="card-text" id= "id"> ID: ${data[2].id} </p>
-                <p class="card-text" id= "email"> Email: <a href="mailto:erumdhukka531@gmail.com"> ${data[2].email} </a> </p>
-                <p class="card-text" id = "school"> School: ${data[2].school} </p>
-              </div>
-            </div>
-  
+      <div>${createTeam(data)}</div>
       </div>
       <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

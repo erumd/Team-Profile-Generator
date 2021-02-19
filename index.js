@@ -1,7 +1,7 @@
-//got help from multiple classmates to create index.js. Different way to complete 
+//got help from multiple classmates to create index.js. Different way to complete
 //you can combine all question to ask to create separate files. I chose to combine
 //there are multiple ways to solve this code.
-
+// My tutor helped me too
 
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -14,8 +14,9 @@ const Intern = require("./lib/Intern");
 //need path to use to .resolve .join
 const path = require("path");
 //BOTTOM CODE: if you want file to go into folder but I do not.
-//const folderPath = path.resolve(__dirname, "Develop");  this path will creat file in the directory Develop Folder
-const createFile = path.join("generateIndex.html"); // this will create file "generateIndex.html" in the Develop folder.
+// const folderPath = path.resolve(__dirname, "dist");  //this path will creat file in the directory Develop Folder
+
+const createFile = path.join("generateIndex.html"); // this will create file "generateIndex.html" in the main folder.
 
 //array output
 const teamProfile = [];
@@ -71,13 +72,8 @@ function engineerQuestions() {
     ])
     .then((data) => {
       console.log(data);
-      let moreInfo = new Engineer(
-        data.name,
-        data.id,
-        data.email,
-        data.github
-      );
-      teamProfile.push(moreInfo);
+      let input = new Engineer(data.name, data.id, data.email, data.github);
+      teamProfile.push(input);
       chooseRole();
     });
 }
@@ -110,13 +106,13 @@ function managerQuestions() {
       },
     ])
     .then((data) => {
-      let moreInfo = new Manager(
+      let input = new Manager(
         data.name,
         data.email,
         data.id,
         data.officeNumber
       );
-      teamProfile.push(moreInfo);
+      teamProfile.push(input);
       chooseRole();
     });
 }
@@ -150,30 +146,19 @@ function internQuestions() {
     ])
     .then((data) => {
       console.log(data);
-      let moreInfo = new Intern(data.name, data.id, data.email, data.school);
-      teamProfile.push(moreInfo);
+      let input = new Intern(data.name, data.id, data.email, data.school);
+      teamProfile.push(input);
       chooseRole();
     });
 }
 
-
-
-//this writes the file
 function buildTeamProfile() {
-  // checks if have an existing file before writing it. NOT sure
-  //   if (!fs.existsSync(folderPath)) {
-  //     fs.mkdirSync(folderPath);
-  //   }
   chooseRole();
 }
 
 function generateHTML() {
-  console.log(teamProfile);
   fs.writeFileSync(createFile, generate(teamProfile));
   console.log("file created!");
 }
 
-// fs.writeFile("generateIndex.html", generateHTML(), (err) =>
-//   err ? console.error(err) : console.log("file created!")
-// );
 buildTeamProfile();

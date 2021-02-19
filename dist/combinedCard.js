@@ -1,6 +1,10 @@
 const managerCard = require("./managerCard");
-const generateCombinedCard = (combinedCards) => {
-  const combinedCard = `<!DOCTYPE html>
+const engineerCard = require('./engineerCard');
+const internCard = require('./internCard');
+
+
+const generateCombinedCard = () => {
+  return `<!DOCTYPE html>
   <html lang="en">
   <head>
       <meta charset="UTF-8">
@@ -19,35 +23,7 @@ const generateCombinedCard = (combinedCards) => {
       <h2></h2>
       <div class= "container">
 
-            <div class="card text-black bg-info mb-3" style="max-width: 18rem;">
-              <div class="card-header">Manager</div>
-              <div class="card-body">
-              <h5 class="card-title" id="name">Tom</h5>
-              <p class="card-text" id= "id"> Email: <a href="mailto:erumdhukka531@gmail.com"> tom@yahoo.com </a> </p>
-              <p class="card-text" id= "email"> ID:123 </p>
-              <p class="card-text" id= "officeNumber"> Office Number: 1 </p>
-              </div>
-            </div>
-
-            <div class="card text-black bg-warning mb-3" style="max-width: 18rem;">
-              <div class="card-header">Engineer</div>
-              <div class="card-body">
-                <h5 class="card-title" id="name"> Jerry</h5>
-                <p class="card-text" id= "id"> ID: 1234  </p>
-                <p class="card-text" id= "email"> Email: <a href="mailto:erumdhukka531@gmail.com"> jerry@gmail.com </a> </p>
-                <p class="card-text" id="github"> GitHub Name: <a href= "https://github.com/erumd"> erumd </a> </p>
-              </div>
-            </div>
-  
-            <div class="card text-black g-secondary mb-3" style="max-width: 18rem;">
-              <div class="card-header">Intern</div>
-              <div class="card-body">
-                <h5 class="card-title">intern</h5>
-                <p class="card-text" id= "id"> ID: 123456 </p>
-                <p class="card-text" id= "email"> Email: <a href="mailto:erumdhukka531@gmail.com"> intern@gmail.com </a> </p>
-                <p class="card-text" id = "school"> School: Rice University </p>
-              </div>
-            </div>
+        <div> THIS WILL HOLD OUR CARDS </div>
   
       </div>
       <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -58,7 +34,6 @@ const generateCombinedCard = (combinedCards) => {
   </body>
   </html>`;
 
-  return combinedCard;
 };
 
 module.export = generateCombinedCard;
