@@ -32,7 +32,7 @@ Open generateIndex.html file to view your input .
 
 ## Video Walk through
 
-Use this link to watch a video on how to use this app to automatically generate a Team Profile webpage. [https://video.drift.com/v/ab5EWxvEzAl/].
+Use this link to watch a video on how to use this app to automatically generate a Team Profile webpage. [https://video.drift.com/share/abieTHUrRHl/].
 
 ![Screenshot](./Develop/TeamProfile.jpg)
 

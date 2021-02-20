@@ -5,13 +5,18 @@ const generateInternCard = require("./dist/internCard");
 const createTeam = (teamMembers) => {
   const htmlCards = [];
 
-  const managerObjects = teamMembers.filter((employee) => employee.getRole() === "Manager");
-  htmlCards.push(managerObjects.map((manager) => generateManagerCard(manager)).join());
+  const managerObjects = teamMembers.filter(
+    (employee) => employee.getRole() === "Manager"
+  );
+  htmlCards.push(
+    managerObjects.map((manager) => generateManagerCard(manager)).join()
+  );
 
   const engineerObjects = teamMembers.filter(
     (employee) => employee.getRole() === "Engineer"
   );
-  htmlCards.push(engineerObjects.map((engineer) => generateEngineerCard(engineer)).join()
+  htmlCards.push(
+    engineerObjects.map((engineer) => generateEngineerCard(engineer)).join()
   );
 
   const internObjects = teamMembers.filter(
@@ -21,8 +26,7 @@ const createTeam = (teamMembers) => {
     internObjects.map((intern) => generateInternCard(intern)).join()
   );
 
-  console.log(htmlCards);
-  return htmlCards;
+  return htmlCards.join("");
 };
 
 function generateHTML(data) {

@@ -71,7 +71,6 @@ function engineerQuestions() {
       },
     ])
     .then((data) => {
-      console.log(data);
       let input = new Engineer(data.name, data.id, data.email, data.github);
       teamProfile.push(input);
       chooseRole();
@@ -145,7 +144,6 @@ function internQuestions() {
       },
     ])
     .then((data) => {
-      console.log(data);
       let input = new Intern(data.name, data.id, data.email, data.school);
       teamProfile.push(input);
       chooseRole();
